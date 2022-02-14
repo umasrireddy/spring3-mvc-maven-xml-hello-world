@@ -18,7 +18,7 @@ stages{
           stage('deploy') {
              steps{
                  withCredentials([usernameColonPassword(credentialsId: 'remote_tomcat_credentials', variable: 'tomcatcred')]) {
-          sh "curl -v -u uma:uma $tomcatcred -T /var/lib/jenkins/workspace/git-maven/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://ec2-3-110-90-25.ap-south-1.compute.amazonaws.com:8081/manager/text/deploy?path=/tomcat-pipeline&update=true'"
+          sh "curl -v -u uma:uma $tomcatcred -T /var/lib/jenkins/workspace/git-maven/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://ec2-15-206-203-74.ap-south-1.compute.amazonaws.com:8081/manager/text/deploy?path=/tomcat-pipeline&update=true'"
                 }
              } 
        post {
@@ -39,4 +39,4 @@ stages{
             }
        }
 
- 
+    
